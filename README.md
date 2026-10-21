@@ -8,12 +8,12 @@ This project implements the core blockchain layer of the **ZTA-Reg-HRABAC** fram
 
 ## 🔬 Scientific & Architectural Context
 
-Traditional Attribute-Based Access Control (ABAC) evaluations inside the Ethereum Virtual Machine (EVM) suffer from linear \(\mathcal{O}(N)\) or polynomial computational degradation due to runtime array traversals, exposing registries to block-gas-limit Denial-of-Service (DoS) exploits at scale. 
+Traditional Attribute-Based Access Control (ABAC) evaluations inside the Ethereum Virtual Machine (EVM) suffer from linear $(\mathcal{O}(N)\)$ or polynomial computational degradation due to runtime array traversals, exposing registries to block-gas-limit Denial-of-Service (DoS) exploits at scale. 
 
 **ZTA-Reg-HRABAC** neutralizes this by compressing variable-length co-ownership configurations and shared equity matrices off-chain into uniform, fixed-length **32-byte cryptographic tokens** (`c_anchor`) via non-invertible Keccak-256 accumulation. 
 
 As verified through extensive state-space modeling using the **TLA+ specification language and the TLC model checker**, this repository ensures:
-* **Constant-Time \(\mathcal{O}(1)\) Persistence:** Bypasses sequential search paths using stateless nested memory lookups (`SLOAD` optimization).
+* **Constant-Time $(\mathcal{O}(1)\)$ Persistence:** Bypasses sequential search paths using stateless nested memory lookups (`SLOAD` optimization).
 * **Flat Gas Ceiling:** Evaluates complex ownership permissions at a completely predictable execution floor of exactly **32,365 gas units**, regardless of database saturation or co-owner density.
 * **Zero-PII Storage:** Plaintext Personally Identifiable Information (PII) is isolated off-chain, satisfying GDPR "Right to Be Forgotten" compliance through edge-level cryptographic pre-image shredding.
 
